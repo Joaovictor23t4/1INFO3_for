@@ -6,8 +6,13 @@
     */
 
     //Entrada
+    const num = Number(prompt(`Informe um número inteiro e positivo`));
 
-
+    if (Number.isInteger(num) === true && Math.sign(num) === 1) {
+        for (let c = 0; c < num; c++) {
+            document.write(`<p>${num - c}</p>`);
+        }
+    }
     //Processamento
 
 

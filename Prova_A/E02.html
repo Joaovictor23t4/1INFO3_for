@@ -8,8 +8,21 @@
     */
 
     //Entrada
+    let listaPredios = ["Bloco A", "Bloco B", "Bloco C", "Bloco D", "Bloco E"];
+    let antigos = [];
+    let novos = [];
 
+    for (const varredor of listaPredios) {
+        const pergunta = prompt(`O ${varredor} é novo ou antigo? N - Novo || A - Antigo`).toUpperCase();
 
+        if (pergunta === "N") {
+            novos.push(varredor);
+        } else if (pergunta === "A") {
+            antigos.push(varredor);
+        }
+    }
+
+    document.write(`<p>Blocos novos: ${novos.join(", ")}</p> <p>Blocos antigos: ${antigos.join(", ")}</p>`);
     //Processamento
 
 

@@ -9,8 +9,26 @@
     */
 
     //Entrada
+    const qtdIphones = Number(prompt(`Quantos iPhones foram vendidos na última black friday?`));
+    let contCartao = 0;
+    let contPix = 0;
+    let somaCartao = [];
+    let somaPix = [];
 
+    for (let c = 1; c <= qtdIphones; c++) {
+        const precoFinal = Number(prompt(`Qual foi o valor do preço final do cliente ${c}`));
+        const formaPagamento = prompt(`Informe a forma de pagamento da pessoa ${c}. C - Cartão de Crédito || P - Pix`).toUpperCase();
 
+        if (formaPagamento === "C") {
+            somaCartao.push(precoFinal);
+            contCartao++;
+        } else if (formaPagamento === "P") {
+            somaPix.push(precoFinal);
+            contPix++;
+        }
+    }
+
+    document.write(`<p>Quantidade de vendas em Cartão de Crédito: ${contCartao}; Faturamento: R$${somaCartao.reduce((soma, valor) => soma + valor, 0).toFixed(2).replace("." , ",")}</p> <p>Quantidade de vendas em Pix: ${contPix}; Faturamento: R$${somaPix.reduce((soma, valor) => soma + valor, 0).toFixed(2).replace("." , ",")}`);
     //Processamento
 
 

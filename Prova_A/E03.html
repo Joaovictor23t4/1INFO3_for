@@ -6,10 +6,17 @@
     */
 
     //Entrada
-
-
+    const qtdNotas = Number(prompt(`Quantas notas o aluno obteve`));
+    const listaNotas = [];
     //Processamento
+    for (let c = 1; c <= qtdNotas; c++) {
+        const pergunta = Number(prompt(`Informe a nota ${c} do aluno`));
+        listaNotas.push(pergunta);
+    }
 
+    listaNotas.sort((a, b) => b-a);
+
+    document.write(`<p>A média das notas foi de ${(listaNotas.reduce((soma, valor) => soma + valor, 0) / listaNotas.length).toFixed(1).replace("." , ",")}</p> <p> A maior nota foi ${listaNotas[0]}</p> <p> A menor nota foi ${listaNotas.slice(-1)}`);
 
     //Saída
     /*
